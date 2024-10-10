@@ -78,8 +78,35 @@ public class Activity {
 			}
 			System.out.println(subjects[i] + ":" +  grades[i] + "->" + gradesClassification);
 		}
+                        System.out.println("\nSubjects with grades below 75");
+                        for (int i = 0; i < subjects.length; i++){
+                            if(grades[i] < 75){
+                               System.out.println(subjects[i] + " : " + grades[i]);
+                            }
+                        }
+                        
+                        double maxGrade = grades[0];
+                        double minGrade = grades[0];
+                        String maxSubject = subjects[0];
+                        String minSubject = subjects[0];
+                        
+                        for (int i = 1; i < grades.length; i++) {
+                            if (grades[i] > maxGrade){
+                                maxGrade = grades[i];
+                                maxSubject = subjects[i];
+                            }
+                            
+                        }
+                        System.out.println("\nHighest grade: " + maxSubject + " : " + maxGrade);
 		
-		
+                        for (int i = 1; i < grades.length; i++) {
+                            if (grades[i] < minGrade){
+                                minGrade = grades[i];
+                                minSubject = subjects[i];
+                            }
+                        }
+                            System.out.print("\nLowest grade: " + minSubject + " : " + minGrade);
 		sc.close();
     }
-}
+    }
+
